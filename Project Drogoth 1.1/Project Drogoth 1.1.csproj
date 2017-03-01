@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor 1\MapGeneratorEditor.cs" />
+    <Compile Include="Assets\Editor 1\TilePlaceEditor.cs" />
     <Compile Include="Assets\Editor 1\TilePlaceGen.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
@@ -98,6 +99,8 @@
     <Compile Include="Assets\Script\MapGen.cs" />
     <Compile Include="Assets\Script\MeshGen.cs" />
     <Compile Include="Assets\Script\MouseMan.cs" />
+    <Compile Include="Assets\Script\Mouseoff.cs" />
+    <Compile Include="Assets\Script\Node.cs" />
     <Compile Include="Assets\Script\Noise.cs" />
     <Compile Include="Assets\Script\Place.cs" />
     <Compile Include="Assets\Script\PlaceTiles.cs" />
