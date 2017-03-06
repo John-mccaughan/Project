@@ -1,8 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\MouseMan.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Editor 1\TilePlaceEditor.cs">
     <Files>
       <File FileName="Assets\Script\MouseMan.cs" Line="6" Column="2" />
+      <File FileName="Assets\Script\TileMapGen.cs" Line="89" Column="2" />
+      <File FileName="Assets\Editor 1\TilePlaceEditor.cs" Line="26" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

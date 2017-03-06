@@ -49,6 +49,9 @@
      <Compile Include="Assets\Editor 1\MapGeneratorEditor.cs" />
      <Compile Include="Assets\Editor 1\TilePlaceEditor.cs" />
      <Compile Include="Assets\Editor 1\TilePlaceGen.cs" />
+     <Compile Include="Assets\RTS_Camera\Demo\DemoScene.cs" />
+     <Compile Include="Assets\RTS_Camera\Demo\TargetSelector.cs" />
+     <Compile Include="Assets\RTS_Camera\Scripts\RTS_Camera.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -70,6 +73,7 @@
      <Compile Include="Assets\Script\Place.cs" />
      <Compile Include="Assets\Script\PlaceTiles.cs" />
      <Compile Include="Assets\Script\TextureGen.cs" />
+     <Compile Include="Assets\Script\TileMapGen.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
