@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project Drogoth 1.1", "Proj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project Drogoth 1.1.Editor.Plugins", "Project Drogoth 1.1.Editor.Plugins.csproj", "{1A405BFC-AFCF-708C-144B-C96AA7C412FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project Drogoth 1.1.Editor", "Project Drogoth 1.1.Editor.csproj", "{6FC3F5DE-580A-9171-1A9F-145D59CFCC25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{1A405BFC-AFCF-708C-144B-C96AA7C412FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A405BFC-AFCF-708C-144B-C96AA7C412FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A405BFC-AFCF-708C-144B-C96AA7C412FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FC3F5DE-580A-9171-1A9F-145D59CFCC25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FC3F5DE-580A-9171-1A9F-145D59CFCC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FC3F5DE-580A-9171-1A9F-145D59CFCC25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FC3F5DE-580A-9171-1A9F-145D59CFCC25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
