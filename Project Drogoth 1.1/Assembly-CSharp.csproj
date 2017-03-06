@@ -70,6 +70,7 @@
      <Compile Include="Assets\Script\Place.cs" />
      <Compile Include="Assets\Script\PlaceTiles.cs" />
      <Compile Include="Assets\Script\TextureGen.cs" />
+     <Compile Include="Assets\Script\TileMapGen.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

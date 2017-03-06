@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(PlaceTiles))]
+[CustomEditor(typeof(TileMapGen))]
 public class TilePlaceEditor : Editor {
 
 	public override void OnInspectorGUI()
 	{
-		PlaceTiles tile = (PlaceTiles)target;
+		TileMapGen tile = (TileMapGen)target;
 		if (DrawDefaultInspector())
 		{
 			if (tile.autoUpdate)
 			{
 				tile.DestroyChildren();
-				tile.TilePlace();
+				tile.GenerateMap();
 			}
 		}
 		if (GUILayout.Button("Generate"))
 		{
 			tile.DestroyChildren();
-			tile.TilePlace();
+			tile.GenerateMap();
 		}
 	}
 }
