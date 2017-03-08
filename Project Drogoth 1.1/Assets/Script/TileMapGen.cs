@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TileMapGen : MonoBehaviour {
 
-	public enum DrawMode {NoiseMap, ColorMap, Mesh};
-	public DrawMode drawMode;
+	//public enum DrawMode {NoiseMap, ColorMap, Mesh};
+	//public DrawMode drawMode;
 
 	const int mapChunkSize = 100;
 	//[Range(0,6)]
@@ -75,23 +75,23 @@ public class TileMapGen : MonoBehaviour {
 				} else {
 					num = Random.Range (1, 50);
 					print ("Num" + num);
-					if(num >= 3 ){
-					GameObject hex_go1 = (GameObject)Instantiate (GrassHexObj1, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
-					hex_go1.name = "Hex1_" + x + "_" + y;
-					hex_go1.transform.SetParent (tiles.transform);
-					hex_go1.isStatic = true;
-					}
-					else if(num == 1){ 
+					if(num == 1  && noiseMap [x, y] > .48f){ 
 						GameObject hex_go2 = (GameObject)Instantiate (treeHexObj1, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
 						hex_go2.name = "treeHex1_" + x + "_" + y;
 						hex_go2.transform.SetParent (tiles.transform);
 						hex_go2.isStatic = true;
 					}
-					else if(num == 2){ 
+					else if(num == 2 && noiseMap [x, y] > .48f){ 
 						GameObject hex_go3 = (GameObject)Instantiate (treeHexObj2, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
 						hex_go3.name = "treeHex2_" + x + "_" + y;
 						hex_go3.transform.SetParent (tiles.transform);
 						hex_go3.isStatic = true;
+					}
+					else{
+						GameObject hex_go1 = (GameObject)Instantiate (GrassHexObj1, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
+						hex_go1.name = "Hex1_" + x + "_" + y;
+						hex_go1.transform.SetParent (tiles.transform);
+						hex_go1.isStatic = true;
 					}
 
 				}
