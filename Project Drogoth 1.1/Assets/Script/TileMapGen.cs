@@ -7,7 +7,7 @@ public class TileMapGen : MonoBehaviour {
 	//public enum DrawMode {NoiseMap, ColorMap, Mesh};
 	//public DrawMode drawMode;
 
-	const int mapChunkSize = 100;
+	public int mapChunkSize = 2000;
 	//[Range(0,6)]
 	//public int levelOfDetail;
 	public float noiseScale;
@@ -33,6 +33,7 @@ public class TileMapGen : MonoBehaviour {
 	public GameObject SandHexObj;
 	public GameObject treeHexObj1;
 	public GameObject treeHexObj2;
+	public GameObject RockHexObj;
 
 	float offRowXOffSet = 1.519f;
 	float offRowZOffSet = 1.315f;
@@ -56,6 +57,7 @@ public class TileMapGen : MonoBehaviour {
 				{
 					xPos += offRowXOffSet/2f;
 				}
+				num = Random.Range (1, 100);
 				if (noiseMap [x, y] < .2f) {
 					GameObject hex_goWater = (GameObject)Instantiate (WaterHexObj1, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
 					hex_goWater.name = "WaterHex_" + x + "_" + y;
@@ -66,16 +68,13 @@ public class TileMapGen : MonoBehaviour {
 					hex_goWater1.name = "WaterHex_" + x + "_" + y;
 					hex_goWater1.transform.SetParent (tiles.transform);
 					hex_goWater1.isStatic = true;
+				} else if (noiseMap [x, y] < .45f && noiseMap [x, y] > .39f) {
+					GameObject hex_goSand1 = (GameObject)Instantiate (SandHexObj, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
+					hex_goSand1.name = "SandHex_" + x + "_" + y;
+					hex_goSand1.transform.SetParent (tiles.transform);
+					hex_goSand1.isStatic = true;
 				}
-					else if (noiseMap[x,y] < .45f && noiseMap[x,y] > .39f) {
-						GameObject hex_goSand1 = (GameObject)Instantiate (SandHexObj, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
-						hex_goSand1.name = "SandHex_" + x + "_" + y;
-						hex_goSand1.transform.SetParent (tiles.transform);
-						hex_goSand1.isStatic = true;
-				} else {
-					num = Random.Range (1, 50);
-					print ("Num" + num);
-					if(num == 1  && noiseMap [x, y] > .48f){ 
+					 else if(num == 1  && noiseMap [x, y] > .48f){ 
 						GameObject hex_go2 = (GameObject)Instantiate (treeHexObj1, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
 						hex_go2.name = "treeHex1_" + x + "_" + y;
 						hex_go2.transform.SetParent (tiles.transform);
@@ -87,7 +86,13 @@ public class TileMapGen : MonoBehaviour {
 						hex_go3.transform.SetParent (tiles.transform);
 						hex_go3.isStatic = true;
 					}
-					else{
+				else if (noiseMap[x,y] > .45f && num == 3) {
+							GameObject hex_goRock = (GameObject)Instantiate (RockHexObj, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
+							hex_goRock.name = "RockHex_" + x + "_" + y;
+							hex_goRock.transform.SetParent (tiles.transform);
+							hex_goRock.isStatic = true;
+					}
+					else {
 						GameObject hex_go1 = (GameObject)Instantiate (GrassHexObj1, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
 						hex_go1.name = "Hex1_" + x + "_" + y;
 						hex_go1.transform.SetParent (tiles.transform);
@@ -97,7 +102,6 @@ public class TileMapGen : MonoBehaviour {
 				}
 			}
 		}
-	}
 
 	void OnValidate() {
 		if (lacunarity < 1) {

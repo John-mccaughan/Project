@@ -12,6 +12,10 @@ ModelImporter:
     100008: pCylinder1003 1
     100010: transform1
     100012: transform2
+    100014: polySurface1
+    100016: polySurface2
+    100018: polySurface2 1
+    100020: transform3
     400000: group2
     400002: //RootNode
     400004: pCylinder1002
@@ -19,11 +23,18 @@ ModelImporter:
     400008: pCylinder1003 1
     400010: transform1
     400012: transform2
+    400014: polySurface1
+    400016: polySurface2
+    400018: polySurface2 1
+    400020: transform3
     2300000: pCylinder1003
     2300002: //RootNode
+    2300004: polySurface2
     3300000: pCylinder1003
     3300002: //RootNode
+    3300004: polySurface2
     4300000: pCylinder1003
+    4300002: polySurface2
     9500000: //RootNode
   materials:
     importMaterials: 1
