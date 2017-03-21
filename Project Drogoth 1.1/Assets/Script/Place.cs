@@ -17,7 +17,7 @@ public class Place : MonoBehaviour {
 	GameObject tiles;
 
     //public TileType[] tileType;
-    public GameObject selectedUnit;
+    //public GameObject selectedUnit;
     public float xPos;
 
     public void PlaceTile() {
@@ -37,25 +37,20 @@ public class Place : MonoBehaviour {
                     hex_go1.name = "Hex1_" + x + "_" + y;
 					hex_go1.transform.SetParent(tiles.transform);
                     hex_go1.isStatic = true;
-                    MouseMan ct = hex_go1.GetComponent<MouseMan>();
-                    ct.tileX = xPos;
-					ct.tileY = y * offRowZOffSet;
-                    ct.map = this;
+                    //MouseMan ct = hex_go1.GetComponent<MouseMan>();
+                    //ct.tileX = xPos;
+					//ct.tileY = y * offRowZOffSet;
+                    //ct.map = this;
             }
 
         }
 	}
 
-    public void MoveSelectUnitTo(float x, float y)
-    {
-        Debug.Log(xPos + " " + y);
-		selectedUnit.transform.position = new Vector3(x, 3f, y);
-    }
-
-	public void SelectUnitFollowMouse(Vector3 moveUnit)
-	{
-		selectedUnit.transform.position = moveUnit;
-	}
+    //public void MoveSelectUnitTo(float x, float y)
+    //{
+      //  Debug.Log(xPos + " " + y);
+		//selectedUnit.transform.position = new Vector3(x, 3f, y);
+    //}
 
     public void DestroyChildren()
     {

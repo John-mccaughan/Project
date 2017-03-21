@@ -1,17 +1,17 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project Drogoth 1.1", "Assembly-CSharp-firstpass.csproj", "{A9C3E11A-8E96-9309-C955-F8C0E7C5CDAD}"
+# Visual Studio 2008
+
+Project("{CF4DC042-5242-72D0-0396-E4FA23E2E1AE}") = "Project Drogoth 1.1", "Assembly-CSharp-firstpass.csproj", "{A9C3E11A-8E96-9309-C955-F8C0E7C5CDAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project Drogoth 1.1", "Assembly-CSharp.csproj", "{E1FBA1FE-F5D2-42E5-838F-86B138AD9FC7}"
+Project("{CF4DC042-5242-72D0-0396-E4FA23E2E1AE}") = "Project Drogoth 1.1", "Assembly-CSharp.csproj", "{E1FBA1FE-F5D2-42E5-838F-86B138AD9FC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project Drogoth 1.1", "Assembly-CSharp-Editor-firstpass.csproj", "{6A93E389-C748-77FA-3DC3-998D1D8F165E}"
+Project("{CF4DC042-5242-72D0-0396-E4FA23E2E1AE}") = "Project Drogoth 1.1", "Assembly-CSharp-Editor-firstpass.csproj", "{6A93E389-C748-77FA-3DC3-998D1D8F165E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project Drogoth 1.1", "Assembly-CSharp-Editor.csproj", "{0F8D7C73-3B24-6B95-A786-378ECF6F2558}"
+Project("{CF4DC042-5242-72D0-0396-E4FA23E2E1AE}") = "Project Drogoth 1.1", "Assembly-CSharp-Editor.csproj", "{0F8D7C73-3B24-6B95-A786-378ECF6F2558}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project Drogoth 1.1", "Assembly-UnityScript.unityproj", "{39556D63-39FF-0CA8-9460-FA9715D481D4}"
+Project("{CF4DC042-5242-72D0-0396-E4FA23E2E1AE}") = "Project Drogoth 1.1", "Assembly-UnityScript.unityproj", "{39556D63-39FF-0CA8-9460-FA9715D481D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project Drogoth 1.1", "Assembly-UnityScript-Editor.unityproj", "{53DA09E2-C679-E47E-1728-5A47BCA3CD79}"
+Project("{CF4DC042-5242-72D0-0396-E4FA23E2E1AE}") = "Project Drogoth 1.1", "Assembly-UnityScript-Editor.unityproj", "{53DA09E2-C679-E47E-1728-5A47BCA3CD79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

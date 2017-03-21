@@ -7,7 +7,8 @@ public class MouseMan : MonoBehaviour {
 
     public float tileX;
     public float tileY;
-    public Place map;
+	public float tileZ;
+	public TileMapGen map;
 
 
 	void Start()
@@ -18,7 +19,7 @@ public class MouseMan : MonoBehaviour {
 
     void OnMouseUp()
     {
-        map.MoveSelectUnitTo(tileX, tileY);
+		map.MoveSelectUnitTo(tileX, tileY, tileZ);
     }
 
     void OnMouseEnter()
