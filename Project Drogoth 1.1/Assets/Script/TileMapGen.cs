@@ -34,11 +34,16 @@ public class TileMapGen : MonoBehaviour {
 	public GameObject treeHexObj1;
 	public GameObject treeHexObj2;
 	public GameObject RockHexObj;
+	public GameObject forestGrassHexObj;
 
 	float offRowXOffSet = 1.519f;
 	float offRowZOffSet = 1.315f;
 
 	GameObject tiles;
+
+	public GameObject selectedUnit;
+	float xPos;
+	public float groundBuffer;
 
 	public void GenerateMap()
 	{
@@ -52,7 +57,7 @@ public class TileMapGen : MonoBehaviour {
 			for (int x = 0; x < mapChunkSize; x++) {
 				float currentHeight = TileHeightCurve.Evaluate(noiseMap[x,y]) * TileHeightMultiplier;
 				//print (currentHeight);
-				float xPos = x * offRowXOffSet;
+				xPos = x * offRowXOffSet;
 				if(y % 2 == 1)
 				{
 					xPos += offRowXOffSet/2f;
@@ -63,45 +68,100 @@ public class TileMapGen : MonoBehaviour {
 					hex_goWater.name = "WaterHex_" + x + "_" + y;
 					hex_goWater.transform.SetParent (tiles.transform);
 					hex_goWater.isStatic = true;
+					MouseMan ct = hex_goWater.GetComponent<MouseMan> ();
+					ct.tileZ = currentHeight + groundBuffer;
+					ct.tileX = xPos;
+					ct.tileY = y * offRowZOffSet;
+					ct.map = this;
+
 				} else if (noiseMap [x, y] < .39f && noiseMap [x, y] > .15f) {
 					GameObject hex_goWater1 = (GameObject)Instantiate (WaterHexObj2, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
 					hex_goWater1.name = "WaterHex_" + x + "_" + y;
 					hex_goWater1.transform.SetParent (tiles.transform);
 					hex_goWater1.isStatic = true;
+					MouseMan ct = hex_goWater1.GetComponent<MouseMan> ();
+					ct.tileZ = currentHeight + groundBuffer;
+					ct.tileX = xPos;
+					ct.tileY = y * offRowZOffSet;
+					ct.map = this;
+
 				} else if (noiseMap [x, y] < .45f && noiseMap [x, y] > .39f) {
 					GameObject hex_goSand1 = (GameObject)Instantiate (SandHexObj, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
 					hex_goSand1.name = "SandHex_" + x + "_" + y;
 					hex_goSand1.transform.SetParent (tiles.transform);
 					hex_goSand1.isStatic = true;
+					MouseMan ct = hex_goSand1.GetComponent<MouseMan> ();
+					ct.tileZ = currentHeight + groundBuffer;
+					ct.tileX = xPos;
+					ct.tileY = y * offRowZOffSet;
+					ct.map = this;
+
+				} else if (num == 1 && noiseMap [x, y] > .48f) { 
+					GameObject hex_go2 = (GameObject)Instantiate (treeHexObj1, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
+					hex_go2.name = "treeHex1_" + x + "_" + y;
+					hex_go2.transform.SetParent (tiles.transform);
+					hex_go2.isStatic = true;
+					MouseMan ct = hex_go2.GetComponent<MouseMan> ();
+					ct.tileZ = currentHeight + groundBuffer;
+					ct.tileX = xPos;
+					ct.tileY = y * offRowZOffSet;
+					ct.map = this;
+
+				} else if (num == 2 && noiseMap [x, y] > .55f) { 
+					GameObject hex_forest = (GameObject)Instantiate (treeHexObj2, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
+					hex_forest.name = "GrassHex2_" + x + "_" + y;
+					hex_forest.transform.SetParent (tiles.transform);
+					hex_forest.isStatic = true;
+					MouseMan ct = hex_forest.GetComponent<MouseMan> ();
+					ct.tileZ = currentHeight + groundBuffer;
+					ct.tileX = xPos;
+					ct.tileY = y * offRowZOffSet;
+					ct.map = this;
+
+				} else if (num != 2 && noiseMap [x, y] > .55f) { 
+					GameObject hex_go3 = (GameObject)Instantiate (forestGrassHexObj, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
+					hex_go3.name = "treeHex2_" + x + "_" + y;
+					hex_go3.transform.SetParent (tiles.transform);
+					hex_go3.isStatic = true;
+					MouseMan ct = hex_go3.GetComponent<MouseMan> ();
+					ct.tileZ = currentHeight + groundBuffer;
+					ct.tileX = xPos;
+					ct.tileY = y * offRowZOffSet;
+					ct.map = this;
+
+				} else if (noiseMap [x, y] > .45f && num == 3) {
+					GameObject hex_goRock = (GameObject)Instantiate (RockHexObj, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
+					hex_goRock.name = "RockHex_" + x + "_" + y;
+					hex_goRock.transform.SetParent (tiles.transform);
+					hex_goRock.isStatic = true;
+					MouseMan ct = hex_goRock.GetComponent<MouseMan> ();
+					ct.tileZ = currentHeight + groundBuffer;
+					ct.tileX = xPos;
+					ct.tileY = y * offRowZOffSet;
+					ct.map = this;
+
+				} else {
+					GameObject hex_go1 = (GameObject)Instantiate (GrassHexObj1, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
+					hex_go1.name = "Hex1_" + x + "_" + y;
+					hex_go1.transform.SetParent (tiles.transform);
+					hex_go1.isStatic = true;
+					MouseMan ct = hex_go1.GetComponent<MouseMan>();
+					ct.tileZ = currentHeight + groundBuffer;
+					ct.tileX = xPos;
+					ct.tileY = y * offRowZOffSet;
+					ct.map = this;
+					Debug.Log (currentHeight + " " + groundBuffer);
+
 				}
-					 else if(num == 1  && noiseMap [x, y] > .48f){ 
-						GameObject hex_go2 = (GameObject)Instantiate (treeHexObj1, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
-						hex_go2.name = "treeHex1_" + x + "_" + y;
-						hex_go2.transform.SetParent (tiles.transform);
-						hex_go2.isStatic = true;
-					}
-					else if(num == 2 && noiseMap [x, y] > .48f){ 
-						GameObject hex_go3 = (GameObject)Instantiate (treeHexObj2, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
-						hex_go3.name = "treeHex2_" + x + "_" + y;
-						hex_go3.transform.SetParent (tiles.transform);
-						hex_go3.isStatic = true;
-					}
-				else if (noiseMap[x,y] > .45f && num == 3) {
-							GameObject hex_goRock = (GameObject)Instantiate (RockHexObj, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
-							hex_goRock.name = "RockHex_" + x + "_" + y;
-							hex_goRock.transform.SetParent (tiles.transform);
-							hex_goRock.isStatic = true;
-					}
-					else {
-						GameObject hex_go1 = (GameObject)Instantiate (GrassHexObj1, new Vector3 (xPos, currentHeight, y * offRowZOffSet), Quaternion.identity);
-						hex_go1.name = "Hex1_" + x + "_" + y;
-						hex_go1.transform.SetParent (tiles.transform);
-						hex_go1.isStatic = true;
-					}
 
 				}
 			}
 		}
+
+	public void MoveSelectUnitTo(float x, float y, float z)
+	{
+		selectedUnit.transform.position = new Vector3(x, z, y);
+	}
 
 	void OnValidate() {
 		if (lacunarity < 1) {

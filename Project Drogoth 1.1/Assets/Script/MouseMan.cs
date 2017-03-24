@@ -3,23 +3,33 @@ using System.Collections;
 
 public class MouseMan : MonoBehaviour {
 
-    private Color basicColor = Color.green;
-    private Color hoverColor = Color.red;
-    private Renderer renderer;
+	private Renderer rend;
 
-    void Start()
-    {
-        renderer = GetComponent<Renderer>();
-        renderer.material.color = Color.black;
-    }
+	public float tileX;
+	public float tileY;
+	public float tileZ;
+	public TileMapGen map;
+	GameObject tile;
+	public Color color;
 
-    void OnMouseEnter()
-    {
-        renderer.material.color = Color.red;
-    }
+	void Start()
+	{
+		rend = GetComponent<Renderer>();
+		color = rend.material.color;
+	}
 
-    void OnMouseExit()
-    {
-        renderer.material.color = Color.black;
-    }
+	void OnMouseUp()
+	{
+		map.MoveSelectUnitTo(tileX, tileY, tileZ);
+	}
+
+	void OnMouseEnter()
+	{
+		rend.material.color = Color.red;
+	}
+
+	void OnMouseExit()
+	{
+		rend.material.color = color;
+	}
 }
